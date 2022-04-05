@@ -3,4 +3,4 @@ project(COMP10050_Assignment_2 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(COMP10050_Assignment_2 main.c structs.h constants.h twitter_create.h twitter_create.c)
+add_executable(COMP10050_Assignment_2 main.c utils/structs.h utils/constants.h lib/twitter_create/twitter_create.h lib/twitter_create/twitter_create.c utils/display_users.h utils/display_users.c)

@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-#include "constants.h"
-#include "structs.h"
+#include "utils/constants.h"
+#include "utils/structs.h"
 
-#include "twitter_create.h"
+#include "lib/twitter_create/twitter_create.h"
 
 int main() {
 

@@ -2,8 +2,10 @@
 #include <stdbool.h>
 #include <string.h>
 
-#include "constants.h"
-#include "structs.h"
+#include "../../utils/constants.h"
+#include "../../utils/structs.h"
+
+#include "../../utils/display_users.h"
 
 void initialize_empty_users(twitter *twitter_system)
 {
@@ -65,63 +67,6 @@ bool input_exit(void)
     {
         return false;
     }
-}
-
-void display_users(twitter *twitter_system)
-{
-    int ID_COL = 3;
-    int USERNAME_COL = 20;
-    int FOLLOWERS_COL = 10;
-    int FOLLOWING_COL = 10;
-
-    int COLS = 4;
-
-    char BORDER[] = " | ";
-
-    int TOTAL = ID_COL + USERNAME_COL + FOLLOWERS_COL + FOLLOWING_COL + (strlen(BORDER) * (COLS + 1)) - 2;
-
-    printf(" ");
-    for (int j = 0; j < TOTAL; j++, printf("%c", '='))
-        ;
-    printf(" \n");
-
-    printf("%s", BORDER);
-
-    printf("%-0*s", ID_COL, "ID");
-
-    printf("%s", BORDER);
-
-    printf("%-0*s", USERNAME_COL, "USERNAME");
-    printf("%s", BORDER);
-
-    printf("%-0*s", FOLLOWERS_COL, "FOLLOWERS");
-    printf("%s", BORDER);
-
-    printf("%-0*s", FOLLOWING_COL, "FOLLOWING");
-    printf("%s", BORDER);
-
-    printf("\n ");
-    for (int j = 0; j < TOTAL; j++, printf("%c", '='))
-        ;
-    printf(" \n");
-
-    for (int j = 0; j < twitter_system->num_users; j++)
-    {
-        printf("%s", BORDER);
-        printf("%-0*d", ID_COL, j + 1);
-        printf("%s", BORDER);
-        printf("%-0*s", USERNAME_COL, twitter_system->users[j].username);
-        printf("%s", BORDER);
-        printf("%-0*d", FOLLOWERS_COL, twitter_system->users[j].num_followers);
-        printf("%s", BORDER);
-        printf("%-0*d", FOLLOWING_COL, twitter_system->users[j].num_following);
-        printf("%s \n", BORDER);
-    }
-    printf(" ");
-    for (int j = 0; j < TOTAL; j++, printf("%c", '='))
-        ;
-
-    printf(" \n");
 }
 
 void create_twitter_system(twitter *twitter_system)

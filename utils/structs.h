@@ -1,6 +1,8 @@
 #ifndef COMP10050_ASSIGNMENT_2_STRUCTS_H
 #define COMP10050_ASSIGNMENT_2_STRUCTS_H
 
+#include "constants.h"
+
 #endif
 
 typedef struct tweet{
