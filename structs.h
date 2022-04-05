@@ -3,8 +3,6 @@
 
 #endif
 
-#include "constants.h"
-
 typedef struct tweet{
     int id;
     char msg[TWEET_LENGTH];
@@ -25,4 +23,6 @@ typedef struct user{
 typedef struct twitter{
     struct user users[MAX_USERS];
     struct tweet tweets[MAX_TWEETS];
+
+    int num_users;
 } twitter;
