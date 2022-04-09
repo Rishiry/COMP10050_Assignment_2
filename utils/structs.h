@@ -13,18 +13,19 @@ typedef struct tweet{
 }tweet;
 
 typedef struct user{
+    int user_id;
     char username[USR_LENGHT];
 
-    char followers[MAX_FOLLOWERS];
+    int followers[MAX_FOLLOWERS];
     int num_followers;
 
-    char following[MAX_FOLLOWING];
+    int following[MAX_FOLLOWING];
     int num_following;
 }user;
 
 typedef struct twitter{
     struct user users[MAX_USERS];
-    struct tweet tweets[MAX_TWEETS];
-
     int num_users;
+
+    struct tweet tweets[MAX_TWEETS];
 } twitter;

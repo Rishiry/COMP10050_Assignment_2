@@ -5,6 +5,6 @@
 
 char *int_to_str(int input);
 void display_cell(int size, char content[], bool last);
-void display_row(user row, int user_id);
+void display_row(user row);
 void display_header();
 void display_users(twitter * twitter_system);

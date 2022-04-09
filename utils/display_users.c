@@ -27,8 +27,8 @@ void display_cell(int size, char content[], bool last) {
     }
 }
 
-void display_row(user row, int user_id) {
-    display_cell(ID_COL, int_to_str(user_id + 1), false);
+void display_row(user row) {
+    display_cell(ID_COL, int_to_str(row.user_id), false);
     display_cell(USERNAME_COL, row.username, false);
     display_cell(FOLLOWERS_COL, int_to_str(row.num_followers), false);
     display_cell(FOLLOWING_COL, int_to_str(row.num_following), true);
@@ -51,7 +51,7 @@ void display_users(twitter *twitter_system)
 
     for (int j = 0; j < twitter_system->num_users; j++)
     {
-        display_row(twitter_system->users[j], j);
+        display_row(twitter_system->users[j]);
     }
 
     REPEAT('=', TOTAL);

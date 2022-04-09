@@ -9,7 +9,7 @@
 
 void initialize_empty_users(twitter *twitter_system)
 {
-    struct user emptyUser = {"\0", {}, 0, {}, 0};
+    struct user emptyUser = {-1, "\0", {}, 0, {}, 0 };
 
     for (int i = 0; i < MAX_USERS; i++)
     {
@@ -59,7 +59,7 @@ bool input_exit(void)
 
     printf("\n");
 
-    if (quit == 'Y' || quit == 'y')
+    if (quit == 'N' || quit == 'n')
     {
         return true;
     }
@@ -83,11 +83,12 @@ void create_twitter_system(twitter *twitter_system)
         char temp_username[USR_LENGHT];
         input_username(twitter_system, &temp_username[0]);
 
+        twitter_system->users[user_count].user_id = user_count;
         strcpy(twitter_system->users[user_count].username, temp_username);
 
         user_count++;
 
-    } while (input_exit());
+    } while (!input_exit());
 
     twitter_system->num_users = user_count;
 
