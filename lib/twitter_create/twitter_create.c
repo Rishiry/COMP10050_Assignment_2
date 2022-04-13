@@ -4,6 +4,7 @@
 
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
+#include "../../utils/twitter_helpers.h"
 
 #include "../../utils/display_users.h"
 
@@ -15,36 +16,6 @@ void initialize_empty_users(twitter *twitter_system)
     {
         twitter_system->users[i] = emptyUser;
     }
-}
-
-bool check_username_unique(twitter *twitter_system, char username[USR_LENGHT])
-{
-    for (int j = 0; j < twitter_system->num_users; j++)
-    {
-        if (strcmp(username, twitter_system->users[j].username) == 0)
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-void input_username(twitter *twitter_system, char *temp_username)
-{
-
-    printf("Username: ");
-    scanf("%s", temp_username, USR_LENGHT);
-
-    while (!check_username_unique(twitter_system, temp_username))
-    {
-        printf("\nThis username is taken, please try again!\n");
-
-        printf("Username: ");
-        scanf("%s", temp_username, USR_LENGHT);
-    }
-
-    fflush(stdin);
 }
 
 bool input_exit(void)
@@ -81,7 +52,7 @@ void create_twitter_system(twitter *twitter_system)
     do
     {
         char temp_username[USR_LENGHT];
-        input_username(twitter_system, &temp_username[0]);
+        input_unique_username(twitter_system, &temp_username[0]);
 
         twitter_system->users[user_count].user_id = user_count;
         strcpy(twitter_system->users[user_count].username, temp_username);

@@ -13,7 +13,7 @@
 #define COLS 4
 #define ID_COL 3
 #define USERNAME_COL 20
-#define FOLLOWERS_COL 10
-#define FOLLOWING_COL 10
+#define FOLLOWERS_COL 15
+#define FOLLOWING_COL 15
 #define TOTAL (ID_COL + USERNAME_COL + FOLLOWERS_COL + FOLLOWING_COL + (strlen(BORDER) * (COLS + 1)))
 #define BORDER " | "

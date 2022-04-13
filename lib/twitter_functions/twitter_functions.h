@@ -7,7 +7,6 @@ void run_twitter_functions(twitter * twitter_system);
 
 void post_tweet();
 void get_news_feed();
-void follow();
 void unfollow();
 void delete();
 void end_turn();
