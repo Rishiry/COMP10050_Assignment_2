@@ -4,7 +4,7 @@
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
 
-#include "../../utils/display_users.h"
+#include "../display/display_users.h"
 
 #include "follow.h"
 #include "unfollow.h"

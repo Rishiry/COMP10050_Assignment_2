@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "structs.h"
+#include "../utils/structs.h"
 
 bool check_username_unique(twitter *twitter_system, char username[])
 {

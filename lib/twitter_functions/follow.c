@@ -2,9 +2,9 @@
 
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
-#include "../../utils/helpers.h"
-#include "../../utils/twitter_helpers.h"
-#include "../../utils/display_users.h"
+#include "../../helpers/helpers.h"
+#include "../../helpers/twitter_helpers.h"
+#include "../display/display_users.h"
 
 void follow(twitter *twitter_system, user *active_user)
 {

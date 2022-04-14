@@ -4,9 +4,9 @@
 
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
-#include "../../utils/twitter_helpers.h"
+#include "../../helpers/twitter_helpers.h"
 
-#include "../../utils/display_users.h"
+#include "../display/display_users.h"
 
 void initialize_empty_users(twitter *twitter_system)
 {

@@ -2,9 +2,9 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "constants.h"
-#include "structs.h"
-#include "helpers.h"
+#include "../../utils/constants.h"
+#include "../../utils/structs.h"
+#include "../../helpers/helpers.h"
 
 void display_cell(int size, char content[], bool last)
 {
