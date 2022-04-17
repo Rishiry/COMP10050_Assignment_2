@@ -28,4 +28,5 @@ typedef struct twitter{
     int num_users;
 
     struct tweet tweets[MAX_TWEETS];
+    int num_tweets;
 } twitter;

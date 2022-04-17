@@ -65,3 +65,13 @@ void input_username(twitter *twitter_system, char *temp_username)
 
     fflush(stdin);
 }
+
+void initialize_empty_users(twitter *twitter_system)
+{
+    struct user emptyUser = {-1, "\0", {}, 0, {}, 0 };
+
+    for (int i = 0; i < MAX_USERS; i++)
+    {
+        twitter_system->users[i] = emptyUser;
+    }
+}

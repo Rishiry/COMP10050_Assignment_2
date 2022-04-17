@@ -4,50 +4,23 @@
 
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
+#include "../../helpers/helpers.h"
 #include "../../helpers/twitter_helpers.h"
 
 #include "../display/display_users.h"
 
-void initialize_empty_users(twitter *twitter_system)
-{
-    struct user emptyUser = {-1, "\0", {}, 0, {}, 0 };
-
-    for (int i = 0; i < MAX_USERS; i++)
-    {
-        twitter_system->users[i] = emptyUser;
-    }
-}
-
-bool input_exit(void)
-{
-    char quit = '\0';
-
-    while (!(quit == 'Y' || quit == 'y' || quit == 'N' || quit == 'n'))
-    {
-        printf("\nMake Another User (Y/N): ");
-        scanf(" %c", &quit);
-    }
-
-    printf("\n");
-
-    if (quit == 'N' || quit == 'n')
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
 
 void create_twitter_system(twitter *twitter_system)
 {
 
-    int user_count = 0;
-
     printf("-- CREATE USERS --\n");
 
     initialize_empty_users(twitter_system);
+
+    twitter_system->num_users = 0;
+    twitter_system->num_tweets = 0;
+
+    int user_count = 0;
 
     do
     {

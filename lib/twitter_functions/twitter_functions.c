@@ -8,13 +8,15 @@
 
 #include "follow.h"
 #include "unfollow.h"
+#include "post.h"
 
 void turn_options()
 {
     printf("1. Follow Another User\n");
     printf("2. Unfollow Someone you follow\n");
-    printf("4. End Turn\n");
-    printf("5. End Twitter\n");
+    printf("3. TWEET SOMETHING!\n");
+    printf("5. End Turn\n");
+    printf("6. End Twitter\n");
     printf("I Pick: ");
 }
 
@@ -24,7 +26,7 @@ void end(bool *stop){
 
 void run_twitter_functions(twitter *twitter_system)
 {
-    void (*f[])(twitter * twitter_system, user * active_user) = {follow, unfollow};
+    void (*f[])(twitter * twitter_system, user * active_user) = {follow, unfollow, post};
 
     bool game_stop = false;
     bool turn_stop = false;
@@ -51,16 +53,16 @@ void run_twitter_functions(twitter *twitter_system)
                 printf("\n");
 
 
-                if (1 <= turn_choice && turn_choice <= 2)
+                if (1 <= turn_choice && turn_choice <= 3)
                 {
                     (*f[turn_choice - 1])(twitter_system, active_user);
                     printf("\n");
                 }
-                else if (turn_choice == 4)
+                else if (turn_choice == 5)
                 {
                     end(&turn_stop);
                 }
-                else if (turn_choice == 5)
+                else if (turn_choice == 6)
                 {
                     end(&game_stop);
                     end(&turn_stop);

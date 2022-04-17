@@ -60,3 +60,25 @@ void delete_index_from_array(int *array[], int length, int index)
 void delete_element_from_array(int *array[], int length, int element){
     delete_index_from_array(&array, length, find_index_in_array(array, length, element));
 }
+
+bool input_exit(void)
+{
+    char quit = '\0';
+
+    while (!(quit == 'Y' || quit == 'y' || quit == 'N' || quit == 'n'))
+    {
+        printf("\nMake Another User (Y/N): ");
+        scanf(" %c", &quit);
+    }
+
+    printf("\n");
+
+    if (quit == 'N' || quit == 'n')
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

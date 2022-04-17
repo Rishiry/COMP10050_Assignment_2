@@ -9,3 +9,4 @@ bool check_username_unique(twitter * twitter_system, char username[]);
 int get_user_id_from_username(twitter * twitter_system, char username[]);
 void input_unique_username(twitter *twitter_system, char *temp_username);
 void input_username(twitter *twitter_system, char *temp_username);
+void initialize_empty_users(twitter *twitter_system);
