@@ -10,6 +10,7 @@
 #include "unfollow.h"
 #include "post.h"
 #include "get_news_feed.h"
+#include "delete.h"
 
 void turn_options()
 {
@@ -29,7 +30,7 @@ void end(bool *stop){
 
 void run_twitter_functions(twitter *twitter_system)
 {
-    void (*f[])(twitter * twitter_system, user * active_user) = {follow, unfollow, post, get_news_feed};
+    void (*f[])(twitter * twitter_system, user * active_user) = {follow, unfollow, post, get_news_feed, delete};
 
     bool game_stop = false;
     bool turn_stop = false;
