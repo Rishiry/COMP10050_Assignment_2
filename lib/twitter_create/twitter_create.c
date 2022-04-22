@@ -7,13 +7,13 @@
 #include "../../helpers/helpers.h"
 #include "../../helpers/twitter_helpers.h"
 
-#include "../display/display_users.h"
+#include "../display/display.h"
 
 
 void create_twitter_system(twitter *twitter_system)
 {
 
-    printf("-- CREATE USERS --\n");
+    display_title("CREATE USERS");
 
     initialize_empty_users(twitter_system);
 

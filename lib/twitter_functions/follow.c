@@ -4,10 +4,12 @@
 #include "../../utils/structs.h"
 #include "../../helpers/helpers.h"
 #include "../../helpers/twitter_helpers.h"
-#include "../display/display_users.h"
+#include "../display/display.h"
 
 void follow(twitter *twitter_system, user *active_user)
 {
+    display_title("FOLLOW SOMEONE! (Type Exit to Quit)");
+
     display_users_with_filter(twitter_system, active_user->following, active_user->num_following, active_user->user_id);
 
     char follow_username[USR_LENGHT];

@@ -5,7 +5,11 @@
 #include "../../utils/structs.h"
 #include "../../helpers/twitter_helpers.h"
 
+#include "../display/display.h"
+
 void delete(twitter * twitter_system, user * active_user){
+
+    display_title("YOUR ACCOUNT IS BEING DELETED!");
 
     printf("Deleting your Account...\nBeep Boop Beep\n");
 

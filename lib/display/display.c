@@ -54,7 +54,7 @@ void display_users(twitter *twitter_system)
 
     for (int j = 0; j < twitter_system->num_users; j++)
     {
-        display_row(twitter_system->users[j]);
+       if(twitter_system->users[j].user_id != -1) { display_row(twitter_system->users[j]); }
     }
 
     REPEAT_CHAR('=', TOTAL);
@@ -70,7 +70,9 @@ void display_users_by_id(twitter *twitter_system, int ids[], int num_ids)
         display_cell(LONG_CELL, "No users to display! Type 'Exit' to Escape!", true);
     } else {
         for (int j = 0; j < num_ids; j++) {
-            display_row(twitter_system->users[ids[j]]);
+            if(twitter_system->users[ids[j]].user_id != -1) {
+                display_row(twitter_system->users[ids[j]]);
+            }
         }
     }
 
@@ -86,7 +88,7 @@ void display_users_with_filter(twitter *twitter_system, int ids[], int num_ids, 
     int shown = 0;
     for (int j = 0; j < twitter_system->num_users; j++)
     {
-        if(!value_in_array(ids, num_ids, j) && !(j == active_id)) {
+        if(!value_in_array(ids, num_ids, j) && !(j == active_id) && twitter_system->users[j].user_id != -1) {
             display_row(twitter_system->users[j]);
             shown++;
         }
@@ -97,4 +99,27 @@ void display_users_with_filter(twitter *twitter_system, int ids[], int num_ids, 
     }
 
     REPEAT_CHAR('=', TOTAL);
+}
+
+void display_title(char title[]) {
+    int len = strlen(title);
+    unsigned int pad = LONG_CELL - len;
+
+    unsigned left_pad = pad / 2;
+    unsigned int right_pad = pad - left_pad;
+
+    REPEAT_CHAR('=', TOTAL);
+
+    printf("%s", BORDER);
+
+    printf("%*s", left_pad, "", pad);
+    printf("%-0*s", LONG_CELL - left_pad - right_pad, title);
+    printf("%*s", right_pad, "");
+
+
+    printf("%s\n", BORDER);
+
+
+    REPEAT_CHAR('=', TOTAL);
+
 }

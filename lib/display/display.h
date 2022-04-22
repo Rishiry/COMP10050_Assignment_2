@@ -11,3 +11,4 @@ void display_single_user(user *active_user);
 void display_users(twitter * twitter_system);
 void display_users_by_id(twitter * twitter_system, int ids[], int num_ids);
 void display_users_with_filter(twitter *twitter_system, int ids[], int num_ids, int active_id);
+void display_title(char title[]);

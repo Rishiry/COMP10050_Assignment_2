@@ -4,7 +4,7 @@
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
 
-#include "../display/display_users.h"
+#include "../display/display.h"
 
 #include "follow.h"
 #include "unfollow.h"
@@ -37,19 +37,19 @@ void run_twitter_functions(twitter *twitter_system)
     int turn_choice = 0;
 
 
-    printf("\n\n-- STARTING -- \n\n");
+    display_title("WELCOME TO TWITTER!");
 
     while (!game_stop)
     {
         for (int j = 0; j < twitter_system->num_users; j++)
         {
             user *active_user = &twitter_system->users[j];
-            display_single_user(active_user);
 
             if(active_user->user_id == -1) {
                 turn_stop = true;
             } else {
                 turn_stop = false;
+                display_single_user(active_user);
             }
 
             while (!turn_stop) {
