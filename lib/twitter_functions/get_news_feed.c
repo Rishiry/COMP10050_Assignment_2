@@ -8,6 +8,6 @@
 void get_news_feed(twitter * twitter_system, user * active_user) {
 
     printf("This is what everyone else is upto:\n\n");
-    print_posts(twitter_system, active_user, 10);
+    print_posts(twitter_system, active_user, DISPLAY_TWEETS);
 
 }

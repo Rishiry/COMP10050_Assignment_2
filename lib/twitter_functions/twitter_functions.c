@@ -30,7 +30,7 @@ void end(bool *stop){
 
 void run_twitter_functions(twitter *twitter_system)
 {
-    void (*f[])(twitter * twitter_system, user * active_user) = {follow, unfollow, post, get_news_feed, delete};
+    void (*f[])(twitter * twitter_system, user * active_user) = {follow, unfollow, post, get_news_feed};
 
     bool game_stop = false;
     bool turn_stop = false;
@@ -46,7 +46,11 @@ void run_twitter_functions(twitter *twitter_system)
             user *active_user = &twitter_system->users[j];
             display_single_user(active_user);
 
-            turn_stop = false;
+            if(active_user->user_id == -1) {
+                turn_stop = true;
+            } else {
+                turn_stop = false;
+            }
 
             while (!turn_stop) {
                 turn_options();
@@ -61,6 +65,12 @@ void run_twitter_functions(twitter *twitter_system)
                 {
                     (*f[turn_choice - 1])(twitter_system, active_user);
                     printf("\n");
+                }
+                else if (turn_choice == 5)
+                {
+                    delete(twitter_system, active_user);
+                    printf("\n");
+                    end(&turn_stop);
                 }
                 else if (turn_choice == 6)
                 {

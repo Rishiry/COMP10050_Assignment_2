@@ -5,3 +5,4 @@
 
 void create_post(twitter *twitter_system, user *active_user, char msg[TWEET_LENGTH]);
 void print_posts(twitter *twitter_system, user *active_user, int count);
+void remove_all_user_posts(twitter *twitter_system, user *active_user);

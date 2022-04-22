@@ -34,3 +34,12 @@ void print_posts(twitter *twitter_system, user *active_user, int count) {
         printf("Not enough tweets by people you follow! Add more people to your following list!\n\n");
     }
 }
+
+void remove_all_user_posts(twitter *twitter_system, user *active_user) {
+    for(int i = twitter_system->num_tweets-1; i >= 0; i--) {
+        if(twitter_system->tweets[i].user_id == active_user->user_id) {
+            twitter_system->tweets[i].user_id = -1;
+            strcpy(twitter_system->tweets[i].msg, "\0");
+        }
+    }
+}

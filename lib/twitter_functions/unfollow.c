@@ -7,7 +7,7 @@
 
 #include "../display/display_users.h"
 
-void unfollow(twitter *twitter_system, user *active_user)
+void unfollow(twitter * twitter_system, user * active_user)
 {
     display_users_by_id(twitter_system, active_user->following, active_user->num_following);
 
@@ -16,17 +16,14 @@ void unfollow(twitter *twitter_system, user *active_user)
 
     int unfollow_id = get_user_id_from_username(twitter_system, unfollow_username);
 
-    if(unfollow_id == -2) {
+    if (unfollow_id == -2)
+    {
         ;
     }
     else if (value_in_array(active_user->following, active_user->num_following, unfollow_id))
     {
         printf("You have chosen to unfollow: %s\n", twitter_system->users[unfollow_id].username);
-
-        int index = find_index_in_array(active_user->following, active_user->num_following, unfollow_id);
-
-        delete_index_from_array(active_user->following, active_user->num_following--, index);
-        delete_index_from_array(twitter_system->users[unfollow_id].followers, twitter_system->users[unfollow_id].num_followers--, index);
+        remove_follow(twitter_system, active_user, unfollow_id);
     }
     else
     {

@@ -38,7 +38,6 @@ void follow(twitter *twitter_system, user *active_user)
     {
         printf("You have chosen to follow: %s\n", twitter_system->users[follow_id].username);
 
-        active_user->following[active_user->num_following++] = follow_id;
-        twitter_system->users[follow_id].followers[twitter_system->users[follow_id].num_followers++] = active_user->user_id;
+        add_follow(twitter_system, active_user, follow_id);
     }
 }
