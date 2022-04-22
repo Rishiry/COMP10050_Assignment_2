@@ -3,7 +3,7 @@
 
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
-#include "../../helpers/helpers.h"
+#include "../../helpers/feed_helpers.h"
 
 void post(twitter * twitter_system, user * active_user){
 
@@ -12,9 +12,17 @@ void post(twitter * twitter_system, user * active_user){
     printf("Write a Post!\n Remember your Limit is %d Chars!\n\n", TWEET_LENGTH);
 
     fgets(tweet_text, TWEET_LENGTH, stdin);
+    tweet_text[strcspn(tweet_text, "\n")] = 0;
 
-    printf("%s", tweet_text);
-    // NOW NEED TO PUT THIS INTO THE SYSTEM
+
+    if(strlen(tweet_text) == 0) {
+        printf("Can't post an empty tweet!");
+    } else {
+
+        create_post(twitter_system, active_user, tweet_text);
+
+        printf("\nPosted!\n");
+    }
 
 
 }

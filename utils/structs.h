@@ -8,8 +8,8 @@
 typedef struct tweet{
     int id;
     char msg[TWEET_LENGTH];
-    char user[USR_LENGHT];
 
+    int user_id;
 }tweet;
 
 typedef struct user{

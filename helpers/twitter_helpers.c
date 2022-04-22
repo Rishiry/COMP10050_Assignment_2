@@ -6,28 +6,44 @@
 
 bool check_username_unique(twitter *twitter_system, char username[])
 {
+    bool unique = true;
     for (int j = 0; j < twitter_system->num_users; j++)
     {
         if (strcasecmp(username, twitter_system->users[j].username) == 0)
         {
-            return false;
+            unique = false;
+            break;
         }
     }
 
-    return true;
+    if (!unique) {
+        printf("\nThis username is taken, please try again!\n");
+        return false;
+    } else if (strcasecmp(username, "Exit") == 0) {
+        printf("Reserved Keyword, please try another username.\n");
+        return false;
+    } else { return true; }
+
 }
 
 int get_user_id_from_username(twitter * twitter_system, char username[]){
     int user_id = -1;
 
-    for (int j = 0; j < twitter_system->num_users; j++)
-    {
-        if (strcasecmp(username, twitter_system->users[j].username) == 0)
+    if (strcasecmp(username, "Exit") == 0) {
+
+        user_id = -2;
+
+    } else {
+        for (int j = 0; j < twitter_system->num_users; j++)
         {
-            user_id = twitter_system->users[j].user_id;
-            break;
+            if (strcasecmp(username, twitter_system->users[j].username) == 0)
+            {
+                user_id = twitter_system->users[j].user_id;
+                break;
+            }
         }
     }
+
 
     return user_id;
 }
@@ -40,8 +56,6 @@ void input_unique_username(twitter *twitter_system, char *temp_username)
 
     while (!check_username_unique(twitter_system, temp_username))
     {
-        printf("\nThis username is taken, please try again!\n");
-
         printf("Username: ");
         scanf("%s", temp_username, USR_LENGHT);
     }

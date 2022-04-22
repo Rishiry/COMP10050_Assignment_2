@@ -3,5 +3,5 @@
 
 #endif
 
-void create_post();
-void print_posts();
+void create_post(twitter *twitter_system, user *active_user, char msg[TWEET_LENGTH]);
+void print_posts(twitter *twitter_system, user *active_user, int count);

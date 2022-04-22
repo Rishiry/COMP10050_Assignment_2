@@ -20,21 +20,19 @@ void create_twitter_system(twitter *twitter_system)
     twitter_system->num_users = 0;
     twitter_system->num_tweets = 0;
 
-    int user_count = 0;
 
     do
     {
         char temp_username[USR_LENGHT];
         input_unique_username(twitter_system, &temp_username[0]);
 
-        twitter_system->users[user_count].user_id = user_count;
-        strcpy(twitter_system->users[user_count].username, temp_username);
+        twitter_system->users[twitter_system->num_users].user_id = twitter_system->num_users;
+        strcpy(twitter_system->users[twitter_system->num_users].username, temp_username);
 
-        user_count++;
+        twitter_system->num_users++;
 
     } while (!input_exit());
-
-    twitter_system->num_users = user_count;
+;
 
     display_users(twitter_system);
 }

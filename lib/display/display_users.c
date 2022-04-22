@@ -66,9 +66,12 @@ void display_users_by_id(twitter *twitter_system, int ids[], int num_ids)
 
     display_header();
 
-    for (int j = 0; j < num_ids; j++)
-    {
-        display_row(twitter_system->users[ids[j]]);
+    if(num_ids == 0){
+        display_cell(LONG_CELL, "No users to display! Type 'Exit' to Escape!", true);
+    } else {
+        for (int j = 0; j < num_ids; j++) {
+            display_row(twitter_system->users[ids[j]]);
+        }
     }
 
     REPEAT_CHAR('=', TOTAL);
@@ -80,11 +83,17 @@ void display_users_with_filter(twitter *twitter_system, int ids[], int num_ids, 
 
     display_header();
 
+    int shown = 0;
     for (int j = 0; j < twitter_system->num_users; j++)
     {
         if(!value_in_array(ids, num_ids, j) && !(j == active_id)) {
             display_row(twitter_system->users[j]);
+            shown++;
         }
+    }
+
+    if(shown == 0){
+        display_cell(LONG_CELL, "No users to display! Type 'Exit' to Escape!", true);
     }
 
     REPEAT_CHAR('=', TOTAL);

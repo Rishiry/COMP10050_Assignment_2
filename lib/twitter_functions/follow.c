@@ -15,7 +15,10 @@ void follow(twitter *twitter_system, user *active_user)
 
     int follow_id = get_user_id_from_username(twitter_system, follow_username);
 
-    if (follow_id == active_user->user_id)
+    if(follow_id == -2) {
+        ;
+    }
+    else if (follow_id == active_user->user_id)
     {
         printf("Ops that's your ID.\n");
     }

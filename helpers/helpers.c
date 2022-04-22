@@ -49,16 +49,15 @@ int find_index_in_array(int array[], int length, int element) {
     return index;
 }
 
-void delete_index_from_array(int *array[], int length, int index)
+void delete_index_from_array(int *array, int length, int index)
 {
-    for (int i = index; i < length - 1; i++)
-    {
-        *array[i] = *array[i + 1];
-    }
-}
 
-void delete_element_from_array(int *array[], int length, int element){
-    delete_index_from_array(&array, length, find_index_in_array(array, length, element));
+    array[index] = -1;
+
+    for (int i = index; i <= length - 1; i++)
+    {
+        array[i] = array[i + 1];
+    }
 }
 
 bool input_exit(void)
