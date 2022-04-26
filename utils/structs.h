@@ -3,18 +3,18 @@
 
 #include "constants.h"
 
-#endif
-
-typedef struct tweet{
+typedef struct tweet
+{
     int id;
     char msg[TWEET_LENGTH];
 
     int user_id;
 
     struct tweet *last;
-}tweet;
+} tweet;
 
-typedef struct user{
+typedef struct user
+{
     int user_id;
     char username[USR_LENGHT];
 
@@ -23,9 +23,10 @@ typedef struct user{
 
     int following[MAX_FOLLOWING];
     int num_following;
-}user;
+} user;
 
-typedef struct twitter{
+typedef struct twitter
+{
     struct user users[MAX_USERS];
     int num_users;
 
@@ -33,4 +34,4 @@ typedef struct twitter{
     int num_tweets;
 } twitter;
 
-
+#endif

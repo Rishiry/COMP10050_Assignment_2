@@ -24,7 +24,8 @@ void turn_options()
     printf("I Pick: ");
 }
 
-void end(bool *stop){
+void end(bool *stop)
+{
     *stop = true;
 }
 
@@ -36,7 +37,6 @@ void run_twitter_functions(twitter *twitter_system)
     bool turn_stop = false;
     int turn_choice = 0;
 
-
     display_title("WELCOME TO TWITTER!");
 
     while (!game_stop)
@@ -45,21 +45,24 @@ void run_twitter_functions(twitter *twitter_system)
         {
             user *active_user = &twitter_system->users[j];
 
-            if(active_user->user_id == -1) {
+            if (active_user->user_id == -1)
+            {
                 turn_stop = true;
-            } else {
+            }
+            else
+            {
                 turn_stop = false;
                 display_single_user(active_user);
             }
 
-            while (!turn_stop) {
+            while (!turn_stop)
+            {
                 turn_options();
 
                 scanf("%d", &turn_choice);
                 fflush(stdin);
 
                 printf("\n");
-
 
                 if (1 <= turn_choice && turn_choice <= 4)
                 {
@@ -68,7 +71,7 @@ void run_twitter_functions(twitter *twitter_system)
                 }
                 else if (turn_choice == 5)
                 {
-                    delete(twitter_system, active_user);
+                    delete (twitter_system, active_user);
                     printf("\n");
                     end(&turn_stop);
                 }
@@ -81,14 +84,12 @@ void run_twitter_functions(twitter *twitter_system)
                     end(&game_stop);
                     end(&turn_stop);
                 }
-
             }
 
-            if(game_stop) {
+            if (game_stop)
+            {
                 break;
             }
-
         }
-
     }
 }

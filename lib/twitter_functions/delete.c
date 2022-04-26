@@ -7,7 +7,8 @@
 
 #include "../display/display.h"
 
-void delete(twitter * twitter_system, user * active_user){
+void delete (twitter *twitter_system, user *active_user)
+{
 
     display_title("YOUR ACCOUNT IS BEING DELETED!");
 
@@ -15,16 +16,17 @@ void delete(twitter * twitter_system, user * active_user){
 
     int unfollow_id;
 
-    for(int i = active_user->num_following - 1; i >= 0; i--){
+    for (int i = active_user->num_following - 1; i >= 0; i--)
+    {
         unfollow_id = active_user->following[i];
         remove_follow(twitter_system, active_user, unfollow_id);
     }
 
-    for(int i = active_user->num_followers - 1; i >= 0; i--){
+    for (int i = active_user->num_followers - 1; i >= 0; i--)
+    {
         unfollow_id = active_user->followers[i];
         remove_follow(twitter_system, &twitter_system->users[unfollow_id], active_user->user_id);
     }
 
     active_user->user_id = -1;
-
 }

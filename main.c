@@ -6,7 +6,8 @@
 #include "lib/twitter_create/twitter_create.h"
 #include "lib/twitter_functions/twitter_functions.h"
 
-int main() {
+int main()
+{
 
     struct twitter twitter_system;
 

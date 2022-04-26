@@ -7,7 +7,7 @@
 
 #include "../display/display.h"
 
-void unfollow(twitter * twitter_system, user * active_user)
+void unfollow(twitter *twitter_system, user *active_user)
 {
     display_title("UNFOLLOW SOMEONE! (Type Exit to Quit)");
 

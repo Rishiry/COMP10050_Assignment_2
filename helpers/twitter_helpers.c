@@ -100,7 +100,7 @@ void initialize_empty_users(twitter *twitter_system)
     }
 }
 
-void add_follow(twitter * twitter_system, user * active_user, int follow_id)
+void add_follow(twitter *twitter_system, user *active_user, int follow_id)
 {
     user *target_user = &twitter_system->users[follow_id];
 
@@ -108,7 +108,7 @@ void add_follow(twitter * twitter_system, user * active_user, int follow_id)
     target_user->followers[target_user->num_followers++] = active_user->user_id;
 }
 
-void remove_follow(twitter * twitter_system, user * active_user, int unfollow_id)
+void remove_follow(twitter *twitter_system, user *active_user, int unfollow_id)
 {
     user *target_user = &twitter_system->users[unfollow_id];
 

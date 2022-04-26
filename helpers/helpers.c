@@ -35,12 +35,14 @@ void input_user_id(int *user_id)
     *user_id = *user_id - 1;
 }
 
-
-int find_index_in_array(int array[], int length, int element) {
+int find_index_in_array(int array[], int length, int element)
+{
     int index = -1;
 
-    for(int i = 0; i < length; i++) {
-        if(array[i] == element) {
+    for (int i = 0; i < length; i++)
+    {
+        if (array[i] == element)
+        {
             index = i;
             break;
         }

@@ -9,7 +9,6 @@
 
 #include "../display/display.h"
 
-
 void create_twitter_system(twitter *twitter_system)
 {
 
@@ -33,7 +32,7 @@ void create_twitter_system(twitter *twitter_system)
         twitter_system->num_users++;
 
     } while (!input_exit());
-;
+    ;
 
     display_users(twitter_system);
 }
