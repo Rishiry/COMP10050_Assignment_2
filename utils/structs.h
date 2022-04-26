@@ -10,6 +10,8 @@ typedef struct tweet{
     char msg[TWEET_LENGTH];
 
     int user_id;
+
+    struct tweet *last;
 }tweet;
 
 typedef struct user{
@@ -27,6 +29,8 @@ typedef struct twitter{
     struct user users[MAX_USERS];
     int num_users;
 
-    struct tweet tweets[MAX_TWEETS];
+    struct tweet *latest_tweet;
     int num_tweets;
 } twitter;
+
+

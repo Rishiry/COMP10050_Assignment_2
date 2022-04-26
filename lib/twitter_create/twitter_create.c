@@ -20,6 +20,7 @@ void create_twitter_system(twitter *twitter_system)
     twitter_system->num_users = 0;
     twitter_system->num_tweets = 0;
 
+    twitter_system->latest_tweet = NULL;
 
     do
     {
