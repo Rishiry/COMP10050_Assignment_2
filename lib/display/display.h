@@ -10,5 +10,7 @@ void display_users(twitter *twitter_system);
 void display_users_by_id(twitter *twitter_system, int ids[], int num_ids);
 void display_users_with_filter(twitter *twitter_system, int ids[], int num_ids, int active_id);
 void display_title(char title[]);
+void display_menu(int count, ...);
+void display_logo(void);
 
 #endif

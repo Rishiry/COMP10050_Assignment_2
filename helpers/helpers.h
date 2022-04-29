@@ -14,5 +14,7 @@ void input_user_id(int *user_id);
 int find_index_in_array(int array[], int length, int element);
 void delete_index_from_array(int *array, int length, int index);
 bool input_exit(void);
+void clear_screen(void);
+void hold_until_enter(void);
 
 #endif

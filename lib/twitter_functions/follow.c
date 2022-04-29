@@ -43,4 +43,6 @@ void follow(twitter *twitter_system, user *active_user)
 
         add_follow(twitter_system, active_user, follow_id);
     }
+
+    hold_until_enter();
 }

@@ -3,6 +3,7 @@
 
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
+#include "../../helpers/helpers.h"
 #include "../../helpers/feed_helpers.h"
 
 #include "../display/display.h"
@@ -14,7 +15,7 @@ void post(twitter *twitter_system, user *active_user)
 
     display_title("TWEET SOMETHING!");
 
-    printf("Remember your Limit is %d Chars!\n\n", TWEET_LENGTH);
+    printf("Remember your Limit is %d Chars!\n\n> ", TWEET_LENGTH);
 
     fgets(tweet_text, TWEET_LENGTH, stdin);
     tweet_text[strcspn(tweet_text, "\n")] = 0;
@@ -30,4 +31,5 @@ void post(twitter *twitter_system, user *active_user)
 
         printf("\nPosted!\n");
     }
+    hold_until_enter();
 }

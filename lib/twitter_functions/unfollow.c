@@ -31,4 +31,6 @@ void unfollow(twitter *twitter_system, user *active_user)
     {
         printf("You don't follow that user! Choose a user you follow to unfollow them.\n");
     }
+
+    hold_until_enter();
 }

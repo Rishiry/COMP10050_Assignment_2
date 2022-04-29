@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stdarg.h>
 
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
@@ -37,14 +38,14 @@ void display_header()
 
 void display_single_user(user *active_user)
 {
-    REPEAT_CHAR('-', TOTAL);
+    REPEAT_CHAR('=', TOTAL);
     display_cell(ID_COL, "ID", false);
     display_cell(USERNAME_COL, "YOUR USERNAME", false);
     display_cell(FOLLOWERS_COL, "YOUR FOLLOWERS", false);
     display_cell(FOLLOWING_COL, "FOLLOWING", true);
     REPEAT_CHAR('-', TOTAL);
     display_row(*active_user);
-    REPEAT_CHAR('-', TOTAL);
+    REPEAT_CHAR('=', TOTAL);
 }
 
 void display_users(twitter *twitter_system)
@@ -124,11 +125,110 @@ void display_title(char title[])
 
     printf("%s", BORDER);
 
-    printf("%*s", left_pad, "", pad);
+    printf("%*s", left_pad, "");
     printf("%-0*s", LONG_CELL - left_pad - right_pad, title);
     printf("%*s", right_pad, "");
 
     printf("%s\n", BORDER);
 
     REPEAT_CHAR('=', TOTAL);
+}
+
+void display_menu(int count, ...)
+{
+
+    va_list list;
+    va_start(list, count);
+
+    int col_a = 0.2 * LONG_CELL;
+    int col_b = TOTAL - col_a - strlen(BORDER) * 3;
+
+    REPEAT_CHAR('=', TOTAL);
+    display_cell(col_a, "Number", false);
+    display_cell(col_b, "Option", true);
+    REPEAT_CHAR('-', TOTAL);
+
+    for (int j = 0; j < count; j++)
+    {
+        char *str = va_arg(list, char *);
+
+        display_cell(col_a, int_to_str(j + 1), false);
+        display_cell(col_b, str, true);
+    }
+
+    va_end(list);
+    REPEAT_CHAR('=', TOTAL);
+}
+
+void display_logo(void)
+{
+
+    int twitter_art_len = 6;
+    char twitter_art[6][36] = {" _____          _ _   _            ",
+                               "|_   _|_      _(_) |_| |_ ___ _ __ ",
+                               "  | | \\ \\ /\\ / / | __| __/ _ \\ '__|",
+                               "  | |  \\ V  V /| | |_| ||  __/ | ",
+                               "  |_|   \\_/\\_/ |_|\\__|\\__\\___|_|   ",
+                               ""};
+
+    int max = 0;
+
+    for (int i = 1; i < twitter_art_len; i++)
+    {
+        if (strlen(twitter_art[i]) > strlen(twitter_art[max]))
+        {
+            max = i;
+        }
+    }
+
+    int len = strlen(twitter_art[max]);
+
+    unsigned left_pad = (LONG_CELL - len) / 2;
+
+    REPEAT_CHAR('=', TOTAL);
+
+    for (int i = 0; i < twitter_art_len; i++)
+    {
+
+        printf("%s", BORDER);
+
+        printf("%*s", left_pad, "");
+        printf("%-0*s", strlen(twitter_art[i]), twitter_art[i]);
+        printf("%*s", LONG_CELL - strlen(twitter_art[i]) - left_pad, "");
+
+        printf("%s\n", BORDER);
+    }
+}
+
+void display_tweet(char msg[TWEET_LENGTH], char author[USR_LENGHT])
+{
+
+    int col = TOTAL - strlen(BORDER) * 2;
+
+    REPEAT_CHAR('-', TOTAL);
+
+    printf("%s", BORDER);
+
+    int i = 0;
+
+    while (msg[i] != '\0')
+    {
+        printf("%c", msg[i++]);
+
+        if (i % col == 0 && i != 0)
+        {
+            printf("%s\n%s", BORDER, BORDER);
+        }
+    }
+
+    while (i % col != 0)
+    {
+        printf(" ");
+        i++;
+    }
+    printf("%s\n", BORDER);
+
+    printf("%s%0*s%s\n", BORDER, col, author, BORDER);
+
+    REPEAT_CHAR('-', TOTAL);
 }

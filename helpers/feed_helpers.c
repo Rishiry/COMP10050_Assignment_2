@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "../utils/structs.h"
+#include "../lib/display/display.h"
 #include "helpers.h"
 
 void create_post(twitter *twitter_system, user *active_user, char msg[TWEET_LENGTH])
@@ -27,7 +28,7 @@ void print_posts(twitter *twitter_system, user *active_user, int count)
     {
         if (current_tweet->user_id == active_user->user_id || value_in_array(active_user->following, active_user->num_following, current_tweet->user_id))
         {
-            printf("%s:\t%s\n", twitter_system->users[current_tweet->user_id].username, current_tweet->msg);
+            display_tweet(current_tweet->msg, twitter_system->users[current_tweet->user_id].username);
             count--;
         }
         current_tweet = current_tweet->last;
@@ -47,8 +48,9 @@ void remove_all_user_posts(twitter *twitter_system, user *active_user)
     {
         if (current_tweet->last->user_id == active_user->user_id)
         {
-
-            current_tweet->last = current_tweet->last->last;
+            tweet *hold = current_tweet->last->last;
+            free(current_tweet->last);
+            current_tweet->last = hold;
             twitter_system->num_tweets--;
         }
         else

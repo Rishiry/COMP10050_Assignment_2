@@ -3,7 +3,6 @@
 
 #include <stdbool.h>
 
-void turn_options();
 void end(bool *stop);
 void run_twitter_functions(twitter * twitter_system);
 

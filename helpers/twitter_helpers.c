@@ -25,7 +25,7 @@ bool check_username_unique(twitter *twitter_system, char username[])
     }
     else if (strcasecmp(username, "Exit") == 0)
     {
-        printf("Reserved Keyword, please try another username.\n");
+        printf("\nReserved Keyword, please try another username.\n");
         return false;
     }
     else

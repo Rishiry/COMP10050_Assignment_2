@@ -72,6 +72,8 @@ bool input_exit(void)
         scanf(" %c", &quit);
     }
 
+    fflush(stdin);
+
     printf("\n");
 
     if (quit == 'N' || quit == 'n')
@@ -82,4 +84,17 @@ bool input_exit(void)
     {
         return false;
     }
+}
+
+void clear_screen(void)
+{
+    system("@cls||clear");
+}
+
+void hold_until_enter(void)
+{
+    printf("(Press Enter to Continue)");
+    while (getchar() != '\n')
+        ;
+    clear_screen();
 }

@@ -12,18 +12,6 @@
 #include "get_news_feed.h"
 #include "delete.h"
 
-void turn_options()
-{
-    printf("1. Follow Another User\n");
-    printf("2. Unfollow Someone you follow\n");
-    printf("3. TWEET SOMETHING!\n");
-    printf("4. See What others are TWEETING about...\n");
-    printf("5. Delete my Account\n");
-    printf("6. End Turn\n");
-    printf("7. End Twitter\n");
-    printf("I Pick: ");
-}
-
 void end(bool *stop)
 {
     *stop = true;
@@ -52,27 +40,27 @@ void run_twitter_functions(twitter *twitter_system)
             else
             {
                 turn_stop = false;
-                display_single_user(active_user);
             }
 
             while (!turn_stop)
             {
-                turn_options();
+                display_single_user(active_user);
+
+                display_menu(7, "Follow (another user)", "Unfollow (another user)", "Tweet!", "My News Feed", "Delete Account", "End Turn", "End Twitter");
+                printf("I Pick: ");
 
                 scanf("%d", &turn_choice);
                 fflush(stdin);
 
-                printf("\n");
+                clear_screen();
 
                 if (1 <= turn_choice && turn_choice <= 4)
                 {
                     (*f[turn_choice - 1])(twitter_system, active_user);
-                    printf("\n");
                 }
                 else if (turn_choice == 5)
                 {
                     delete (twitter_system, active_user);
-                    printf("\n");
                     end(&turn_stop);
                 }
                 else if (turn_choice == 6)

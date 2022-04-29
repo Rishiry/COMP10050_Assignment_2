@@ -12,6 +12,7 @@
 void create_twitter_system(twitter *twitter_system)
 {
 
+    display_logo();
     display_title("CREATE USERS");
 
     initialize_empty_users(twitter_system);
@@ -32,7 +33,11 @@ void create_twitter_system(twitter *twitter_system)
         twitter_system->num_users++;
 
     } while (!input_exit());
-    ;
 
+    display_title("USERS CREATED!");
     display_users(twitter_system);
+
+    hold_until_enter();
+
+    printf("\n\n\n");
 }
