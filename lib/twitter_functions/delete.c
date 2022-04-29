@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include <string.h>
 
-#include "../../utils/constants.h"
 #include "../../utils/structs.h"
+#include "../../helpers/helpers.h"
 #include "../../helpers/twitter_helpers.h"
+#include "../../helpers/feed_helpers.h"
 
 #include "../display/display.h"
 
@@ -28,5 +28,9 @@ void delete (twitter *twitter_system, user *active_user)
         remove_follow(twitter_system, &twitter_system->users[unfollow_id], active_user->user_id);
     }
 
+    remove_all_user_posts(twitter_system, active_user);
+
     active_user->user_id = -1;
+
+    hold_until_enter();
 }

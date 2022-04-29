@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="AUTOSCROLL_TO_SOURCE" value="true" />
+    <option name="GROUP_BY_SEVERITY" value="true" />
+    <option name="FILTER_RESOLVED_ITEMS" value="false" />
+    <option name="SHOW_STRUCTURE" value="true" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="COMP10050_Assignment_2" targetName="COMP10050_Assignment_2" />
@@ -19,11 +25,11 @@
       <change beforePath="$PROJECT_DIR$/lib/display/display.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/display/display.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/display/display.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/display/display.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/twitter_create/twitter_create.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter_create/twitter_create.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/twitter_functions/follow.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter_functions/follow.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/twitter_functions/delete.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter_functions/delete.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/twitter_functions/get_news_feed.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter_functions/get_news_feed.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/twitter_functions/post.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter_functions/post.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/twitter_functions/twitter_functions.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter_functions/twitter_functions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/twitter_functions/twitter_functions.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter_functions/twitter_functions.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +63,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -81,6 +87,7 @@
     <property name="cmake.loaded.for.project" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/display" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -117,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651671407069</updated>
-      <workItem from="1651671412337" duration="54850000" />
+      <workItem from="1651671412337" duration="59792000" />
     </task>
     <servers />
   </component>

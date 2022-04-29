@@ -36,21 +36,43 @@ void print_posts(twitter *twitter_system, user *active_user, int count)
 
     if (count > 0)
     {
-        printf("Not enough tweets by people you follow! Add more people to your following list!\n\n");
+        display_tweet("We wanted to show you 10 most recent tweets but there are not enough tweets by people you follow! Add more people to your following list!", "The Developers");
     }
 }
 
 void remove_all_user_posts(twitter *twitter_system, user *active_user)
 {
-    tweet *current_tweet = twitter_system->latest_tweet;
+    tweet *current_tweet, *hold;
+    printf("Deleting PostsA\n");
+
+    while (twitter_system->latest_tweet != NULL)
+    {
+        if (twitter_system->latest_tweet->user_id == active_user->user_id)
+        {
+            hold = twitter_system->latest_tweet;
+            twitter_system->latest_tweet = hold->last;
+            printf("Deleted Tweet: %s\n", hold->msg);
+            free(hold);
+            twitter_system->num_tweets--;
+        }
+        else
+        {
+            break;
+        }
+    }
+    printf("Deleting Posts\n");
+
+    current_tweet = twitter_system->latest_tweet;
 
     while (current_tweet != NULL)
     {
         if (current_tweet->last->user_id == active_user->user_id)
         {
-            tweet *hold = current_tweet->last->last;
-            free(current_tweet->last);
-            current_tweet->last = hold;
+
+            hold = current_tweet->last;
+            current_tweet = hold->last;
+            printf("Deleted Tweet: %s\n", hold->msg);
+            free(hold);
             twitter_system->num_tweets--;
         }
         else

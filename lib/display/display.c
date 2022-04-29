@@ -98,7 +98,7 @@ void display_users_with_filter(twitter *twitter_system, int ids[], int num_ids, 
     int shown = 0;
     for (int j = 0; j < twitter_system->num_users; j++)
     {
-        if (!value_in_array(ids, num_ids, j) && !(j == active_id) && twitter_system->users[j].user_id != -1)
+        if (!value_in_array(ids, num_ids, j) && (j != active_id) && twitter_system->users[j].user_id != -1)
         {
             display_row(twitter_system->users[j]);
             shown++;
@@ -140,11 +140,11 @@ void display_menu(int count, ...)
     va_list list;
     va_start(list, count);
 
-    int col_a = 0.2 * LONG_CELL;
+    int col_a = 0.1 * LONG_CELL;
     int col_b = TOTAL - col_a - strlen(BORDER) * 3;
 
     REPEAT_CHAR('=', TOTAL);
-    display_cell(col_a, "Number", false);
+    display_cell(col_a, "No.", false);
     display_cell(col_b, "Option", true);
     REPEAT_CHAR('-', TOTAL);
 

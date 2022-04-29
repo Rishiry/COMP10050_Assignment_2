@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-#include "utils/constants.h"
 #include "utils/structs.h"
 
 #include "lib/twitter_create/twitter_create.h"

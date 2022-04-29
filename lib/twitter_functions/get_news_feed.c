@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include "../../utils/constants.h"
 #include "../../utils/structs.h"
 #include "../../helpers/helpers.h"

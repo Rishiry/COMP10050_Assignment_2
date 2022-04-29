@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <string.h>
 
 #include "../../utils/constants.h"
@@ -13,7 +12,7 @@ void create_twitter_system(twitter *twitter_system)
 {
 
     display_logo();
-    display_title("CREATE USERS");
+    display_title("CREATE USERS!");
 
     initialize_empty_users(twitter_system);
 
@@ -34,10 +33,10 @@ void create_twitter_system(twitter *twitter_system)
 
     } while (!input_exit());
 
+    clear_screen();
+
     display_title("USERS CREATED!");
     display_users(twitter_system);
 
     hold_until_enter();
-
-    printf("\n\n\n");
 }

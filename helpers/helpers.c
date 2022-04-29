@@ -27,14 +27,6 @@ bool value_in_array(int array[], int length, int value)
     return exists;
 }
 
-void input_user_id(int *user_id)
-{
-    printf("User ID: ");
-    scanf("%d", user_id);
-    fflush(stdin);
-    *user_id = *user_id - 1;
-}
-
 int find_index_in_array(int array[], int length, int element)
 {
     int index = -1;

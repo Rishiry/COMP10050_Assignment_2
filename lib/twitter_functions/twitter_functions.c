@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "../../utils/constants.h"
 #include "../../utils/structs.h"
+#include "../../helpers/helpers.h"
 
 #include "../display/display.h"
 
@@ -26,6 +26,9 @@ void run_twitter_functions(twitter *twitter_system)
     int turn_choice = 0;
 
     display_title("WELCOME TO TWITTER!");
+    display_tweet("For the best experience, ensure your terminal can display more than 70 characters in one line!", "The Developers");
+
+    hold_until_enter();
 
     while (!game_stop)
     {
