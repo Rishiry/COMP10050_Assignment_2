@@ -1,13 +1,21 @@
 #ifndef COMP10050_ASSIGNMENT_2_CONSTANTS_H
 #define COMP10050_ASSIGNMENT_2_CONSTANTS_H
 
-#define TWEET_LENGTH 280  // Max length of a tweet
-#define USR_LENGHT 100    // Max length of a username
-#define MAX_FOLLOWERS 30  // Max num of a followers
-#define MAX_FOLLOWING 30  // Max num of following users
-#define MAX_USERS 100     // Max num of users
-#define DISPLAY_TWEETS 10 // Number of Tweets to Display
+// CONSTANTS FOR TWITTER
+// MAX LENGTH OF A TWEET
+#define TWEET_LENGTH 280
+// MAX LENGTH OF USERNAMES
+#define USR_LENGHT 100
+// MAX NUMBER OF FOLLOWERS
+#define MAX_FOLLOWERS 30
+// MAX NUMBER OF FOLLOWING
+#define MAX_FOLLOWING 30
+// MAX NUMBER OF USERS
+#define MAX_USERS 100
+// NUMBER OF TWEETS TO DISPLAY
+#define DISPLAY_TWEETS 10
 
+// CONSTANTS FOR DISPLAY LIBRARY
 #define COLS 4
 #define ID_COL 3
 #define USERNAME_COL 20

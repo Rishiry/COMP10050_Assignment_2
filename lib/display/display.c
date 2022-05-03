@@ -1,10 +1,16 @@
+// C LIBRARIES
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
 #include <stdarg.h>
 
+// REQUIRED FOR CONSTANT VALUES
 #include "../../utils/constants.h"
+
+// INCLUDE STRUCTURES USED
 #include "../../utils/structs.h"
+
+// INCLUDE HELPER FUNCTIONS
 #include "../../helpers/helpers.h"
 
 void display_cell(int size, char content[], bool last)

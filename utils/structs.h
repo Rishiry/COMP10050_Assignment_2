@@ -1,8 +1,11 @@
 #ifndef COMP10050_ASSIGNMENT_2_STRUCTS_H
 #define COMP10050_ASSIGNMENT_2_STRUCTS_H
 
+// REQUIRED FOR CONSTANT VALUES
 #include "constants.h"
 
+
+// TYPE OF TWEET
 typedef struct tweet
 {
     int id;
@@ -13,6 +16,7 @@ typedef struct tweet
     struct tweet *last;
 } tweet;
 
+// TYPE OF USER
 typedef struct user
 {
     int user_id;
@@ -25,6 +29,7 @@ typedef struct user
     int num_following;
 } user;
 
+// TYPE OF TWITTER SYSTEM
 typedef struct twitter
 {
     struct user users[MAX_USERS];

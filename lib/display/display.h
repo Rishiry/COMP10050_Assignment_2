@@ -1,7 +1,10 @@
 #ifndef COMP10050_ASSIGNMENT_2_DISPLAY_USERS_H
 #define COMP10050_ASSIGNMENT_2_DISPLAY_USERS_H
+
+// C LIBRARIES
 #include <stdbool.h>
 
+// FUNCTION PROTOTYPES
 void display_cell(int size, char content[], bool last);
 void display_row(user row);
 void display_header();
