@@ -36,14 +36,14 @@ It is important to note that the library is **hard coded** and would require a m
 #### Hard Coded Constants
 
 ```
-COLS 								Number of Columns in the table displayed
-ID_COL							Number of Characters in the ID Column
+COLS				Number of Columns in the table displayed
+ID_COL				Number of Characters in the ID Column
 USERNAME_COL				Number of Characters in the Username Column
 FOLLOWERS_COL				Number of Characters in the Followers Column
 FOLLOWING_COL				Number of Characters in the Following Column
-TOTAL								Number of Characters in the row
-LONG_CELL						Number of Characters in a long cell
-BORDER							String to be used as border for the table
+TOTAL				Number of Characters in the row
+LONG_CELL				Number of Characters in a long cell
+BORDER				String to be used as border for the table
 ```
 
 These values are placed in *constants.h*.
@@ -95,19 +95,19 @@ The helper directory houses miscellaneous functions which are utilized across th
 The project made use of certain constant values due to the nature of C. These were all contained in *constants.h* and were reused across the every library. In addition to the constants mentioned under the display library, the following constants were used:
 
 ```
-COLS 								Number of Columns in the table displayed
+COLS				Number of Columns in the table displayed
 TWEET_LENGTH				Maximum Length of a Tweet
-USR_LENGHT					Maximum Length of Usernames
+USR_LENGHT				Maximum Length of Usernames
 MAX_FOLLOWERS				Maximum Number of Followers a user can have
 MAX_FOLLOWING				Maximum Number of users a user can Follow
-MAX_USERS						Maximum Number of users allowed
-DISPLAY_TWEETS			Number of tweets to Display
+MAX_USERS				Maximum Number of users allowed
+DISPLAY_TWEETS				Number of tweets to Display
 ```
 
 The following constant was used in earlier versions of the project, however, was scraped when the Tweets were refactored to be stored in a Linked List instead of an array.
 
 ```
-MAX_TWEETS					Maximum Number of Tweets allowed
+MAX_TWEETS				Maximum Number of Tweets allowed
 ```
 
 #### Structs
@@ -115,10 +115,10 @@ MAX_TWEETS					Maximum Number of Tweets allowed
 Custom structures were used to store and access the working data of the program. The definition of these structures along with their use can be found in *structs.h*. The structures used were:
 
 ```
-tweet								Used to hold a single tweet. It also holds a pointer to last tweet posted which allows for the traversal of all tweets given only the latest tweet.
+tweet				Used to hold a single tweet. It also holds a pointer to last tweet posted which allows for the traversal of all tweets given only the latest tweet.
 
-user								Used to hold a single user. Contains any information like username or follower count.
+user				Used to hold a single user. Contains any information like username or follower count.
 
-twitter							Used as the main data store for project. Contains latest tweet, array of all users etc. Passed down to almost every function so the data can be accessed and modified from any layer of the application - including the main function, the libraries and even the helper functions.
+twitter				Used as the main data store for project. Contains latest tweet, array of all users etc. Passed down to almost every function so the data can be accessed and modified from any layer of the application - including the main function, the libraries and even the helper functions.
 ```
 
