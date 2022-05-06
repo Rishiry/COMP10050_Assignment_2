@@ -1,10 +1,4 @@
 # COMP10050 Assignment 2
-## Table of Contents
-
-[toc]
-
-
-
 ## Description
 
 A simplified version of Twitter where users can post tweets, follow/unfollow another user, and are able to see the 10 most recent tweets in the user’s news feed.
