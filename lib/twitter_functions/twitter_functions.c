@@ -43,7 +43,7 @@ void run_twitter_functions(twitter *twitter_system)
     display_title("WELCOME TO TWITTER!");
 
     // DISPLAY MESSAGE
-    display_tweet("For the best experience, ensure your terminal can display more than 70 characters in one line!", "The Developers");
+    display_tweet(&"For the best experience, ensure your terminal can display more than 70 characters in one line!"[0], &"The Developers"[0]);
 
     // PAUSE UNTIL USER INPUT
     hold_until_enter();

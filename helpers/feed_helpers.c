@@ -58,7 +58,7 @@ void print_posts(twitter *twitter_system, user *active_user, int count)
     if (count > 0)
     {
         // DISPLAY WARNING
-        display_tweet("We wanted to show you 10 most recent tweets but there are not enough tweets by people you follow! Add more people to your following list!", "The Developers");
+        display_tweet(&"We wanted to show you 10 most recent tweets but there are not enough tweets by people you follow! Add more people to your following list!"[0], &"The Developers"[0]);
     }
 }
 

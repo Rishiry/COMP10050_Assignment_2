@@ -15,6 +15,6 @@ void display_users_with_filter(twitter *twitter_system, int ids[], int num_ids, 
 void display_title(char title[]);
 void display_menu(int count, ...);
 void display_logo(void);
-void display_tweet(char msg[TWEET_LENGTH], char author[USR_LENGHT]);
+void display_tweet(char *msg, char *author);
 
 #endif

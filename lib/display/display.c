@@ -206,7 +206,7 @@ void display_logo(void)
     }
 }
 
-void display_tweet(char msg[TWEET_LENGTH], char author[USR_LENGHT])
+void display_tweet(char *msg, char *author)
 {
 
     int col = TOTAL - strlen(BORDER) * 2;
