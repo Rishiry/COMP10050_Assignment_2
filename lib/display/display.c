@@ -234,7 +234,7 @@ void display_tweet(char *msg, char *author)
     }
     printf("%s\n", BORDER);
 
-    printf("%s%0*s%s\n", BORDER, col, author, BORDER);
+    printf("%s%*s%s\n", BORDER, col, author, BORDER);
 
     REPEAT_CHAR('-', TOTAL);
 }

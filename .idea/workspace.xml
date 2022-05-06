@@ -6,7 +6,7 @@
     <option name="FILTER_RESOLVED_ITEMS" value="false" />
     <option name="SHOW_STRUCTURE" value="true" />
   </component>
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+  <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="COMP10050_Assignment_2" targetName="COMP10050_Assignment_2" />
     </generated>
@@ -19,10 +19,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b7f7fe05-1da0-4db0-a734-5591cba8a638" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/feed_helpers.c" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/feed_helpers.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/display/display.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/display/display.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/display/display.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/display/display.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/twitter_functions/twitter_functions.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter_functions/twitter_functions.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +42,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/CMakeLists.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lib/twitter_create/twitter_create.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lib/twitter_create/twitter_create.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/utils/constants.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/utils/structs.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CMakeLists.txt" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -69,20 +66,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/display" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "cmake.loaded.for.project": "true",
+    "last_opened_file_path": "/Users/rishi/Documents/College/COMP10050/COMP10050_Assignment_2"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rishi\Documents\College\COMP10050\Assignment_2\COMP10050_Assignment_2\helpers" />
@@ -99,12 +94,12 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="COMP10050_Assignment_2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="COMP10050_Assignment_2" TARGET_NAME="COMP10050_Assignment_2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="COMP10050_Assignment_2" RUN_TARGET_NAME="COMP10050_Assignment_2">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="COMP10050_Assignment_2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="COMP10050_Assignment_2" TARGET_NAME="COMP10050_Assignment_2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="COMP10050_Assignment_2" RUN_TARGET_NAME="COMP10050_Assignment_2">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -119,6 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651671407069</updated>
       <workItem from="1651671412337" duration="65481000" />
+      <workItem from="1652297262699" duration="266000" />
     </task>
     <servers />
   </component>
