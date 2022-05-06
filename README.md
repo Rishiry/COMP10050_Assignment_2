@@ -38,11 +38,11 @@ It is important to note that the library is **hard coded** and would require a m
 ```
 COLS				Number of Columns in the table displayed
 ID_COL				Number of Characters in the ID Column
-USERNAME_COL				Number of Characters in the Username Column
-FOLLOWERS_COL				Number of Characters in the Followers Column
-FOLLOWING_COL				Number of Characters in the Following Column
+USERNAME_COL		Number of Characters in the Username Column
+FOLLOWERS_COL		Number of Characters in the Followers Column
+FOLLOWING_COL		Number of Characters in the Following Column
 TOTAL				Number of Characters in the row
-LONG_CELL				Number of Characters in a long cell
+LONG_CELL			Number of Characters in a long cell
 BORDER				String to be used as border for the table
 ```
 
@@ -96,18 +96,18 @@ The project made use of certain constant values due to the nature of C. These we
 
 ```
 COLS				Number of Columns in the table displayed
-TWEET_LENGTH				Maximum Length of a Tweet
-USR_LENGHT				Maximum Length of Usernames
-MAX_FOLLOWERS				Maximum Number of Followers a user can have
-MAX_FOLLOWING				Maximum Number of users a user can Follow
-MAX_USERS				Maximum Number of users allowed
-DISPLAY_TWEETS				Number of tweets to Display
+TWEET_LENGTH		Maximum Length of a Tweet
+USR_LENGHT			Maximum Length of Usernames
+MAX_FOLLOWERS		Maximum Number of Followers a user can have
+MAX_FOLLOWING		Maximum Number of users a user can Follow
+MAX_USERS			Maximum Number of users allowed
+DISPLAY_TWEETS		Number of tweets to Display
 ```
 
 The following constant was used in earlier versions of the project, however, was scraped when the Tweets were refactored to be stored in a Linked List instead of an array.
 
 ```
-MAX_TWEETS				Maximum Number of Tweets allowed
+MAX_TWEETS			Maximum Number of Tweets allowed
 ```
 
 #### Structs
