@@ -1,7 +1,9 @@
 # COMP10050 Assignment 2
 ## Table of Contents
 
-[TOC]
+[toc]
+
+
 
 ## Description
 
